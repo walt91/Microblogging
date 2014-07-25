@@ -46,32 +46,5 @@
     </style>
      
   <div class="panel">
-    <br>
-    <br>
-        <h1>Music Box</h1>
-
-  	<div class="progress progress-striped active">
-    <div class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-      <span class="sr-only">100% Complete</span>
-    </div>
-  </div>
-    <form id="file-submit" enctype="multipart/form-data" method="post" action="store">
-        <input id="filename" name="filename" type="file"/>
-        <h2>Audio format to convert</h2> 
-        <div class="form-control"> 
-          <input type="radio" name="tipo" id="tipo" value="ogg" required> OGG
-          <input type="radio" name="tipo" id="tipo" style="margin-left:12%;" value="mp3" required> MP3
-          <input type="radio" name="tipo" id="tipo" style=" margin-left:12%; " value="wav" required> WAV
-        </div>
-        <div class="fileUpload btn btn-primary btn-lg active">
-      <span>Upload File</span>
-      <input type="submit" class="upload" name="file" value="Upload File" id="file-save"/>
-      </div>
-      <button type="button" class="btn btn-success btn-lg active">Download File</button>
-      <br>
-
-    </form>
-      @if(Session::has('message'))
-        <div class="alert alert-{{ Session::get('class') }}">{{ Session::get('message')}}</div>
-      @endif
+    
 </div>
