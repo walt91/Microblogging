@@ -17,14 +17,14 @@
           padding: 5px;
           background-color: rgba(7, 3, 3, 0.27);
           border: solid 1px #fff;
-          width:97%;
-           height: auto;
+          width:75%;
+          height: auto;
           display: none;
           position: absolute;
           top: 50%; 
           left: 50%; 
           margin-top: -140px; 
-          margin-left: -626px;
+          margin-left: -490px;
           color: white;
       }
       
@@ -47,12 +47,8 @@
     
 
   <div class="panel">
-    
-
-    <div class="container">
-    <div class="page-header">
-        <h1 id="timeline">HUMS</h1>
-    </div>
+        <h1 id="timeline" >HUMS</h1>
+        <hr>
     <ul class="timeline">
 
         <li>
@@ -101,13 +97,12 @@
               </button>
              </div>
           </div>
-</div>
 <a id="back-to-top" href="" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </div>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#home').removeClass("active");
-        $('#home').addClass("home");
+        $('#home').removeClass("home");
+        $('#home').addClass("active");
     });
 </script>
