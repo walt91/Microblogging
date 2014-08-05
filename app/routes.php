@@ -15,4 +15,10 @@
 {
 	return View::make('hello');
 });*/
-Route::controller('home', 'HomeController');
+/*Route::controller('home', 'HomeController');*/
+Route::get('microblogging', 'HomeController@index');
+Route::get('profile', 'HomeController@profile');
+Route::get('edit', 'HomeController@edit');
+
+Route::post('update', 'HomeController@update');
+Route::post('hum', 'HomeController@hum');
