@@ -10,7 +10,7 @@ class Comentario extends Eloquent
     
 
     public static function comments() { 
-    $alias = "@a";
+    $alias = Auth::user()->usrs_alias;
 	return DB::select("
 select comments_alias alias, comments_descrip commentario, comments_fecha fecha 
 from mb_mnt_comments 

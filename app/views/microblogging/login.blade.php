@@ -3,7 +3,7 @@
     src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-                $(".panel").slideToggle("slow");
+                $(".panel").fadeIn("slow");
         });
     </script>
 
@@ -13,8 +13,10 @@
         <div class="col-md-4 col-md-offset-7">
             <div class="panel panel-default">
                 <div class="panel-footer">
-                    <span class="glyphicon glyphicon-lock"></span> Login</div>
+                    <span class="glyphicon glyphicon-lock" style="color:white"></span> <strong style="color:white"> Login </strong>
+                </div>
                 <div class="panel-body">
+
                     <form action="login" method="post" accept-charset="utf-8" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label for="email" class="col-sm-3 control-label">
@@ -45,7 +47,8 @@
                             <button type="submit" class="btn btn-success btn-sm" href="login">
                                 Sign in</button>
                                  <button type="reset" class="btn btn-default btn-sm">
-                                Register</button>
+                                clean</button>
+                                <a  type='button' href='register' class='btn btn-sm btn-warning'><i class='glyphicon glyphicon-edit'></i> <strong> Register</strong></a>
                         </div>
                     </div>
                     </form>
@@ -54,7 +57,7 @@
     </div>
 </div>
     </div>
-
+</div>
 
 <?php 
     if ($errors->has()) 

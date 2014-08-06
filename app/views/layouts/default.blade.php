@@ -30,7 +30,7 @@
     <button type="submit" class="btn-small"><span class="glyphicon glyphicon-search"></span></button>
     </form></li>
     <li id="configuration" class="configuration"><a href="" class="flip"><span class="glyphicon glyphicon-cog"></span> Configuration</a></li>
-    <li id="logout" class="logout"><a href="/login" class="flip"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+    <li id="logout" class="logout"><a href="/logout" class="flip"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
     </ul>
 
 

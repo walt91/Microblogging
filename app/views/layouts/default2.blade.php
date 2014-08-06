@@ -9,12 +9,15 @@
     {{HTML::script('js/jquery.js');}}
 </head>
 <body>
-    <style type="text/css">
-      background-image: url('http://wallpaperswiki.org/wallpapers/2012/11/Wallpaper-Dark-Background-Cell-Green-Light-Line-768x1366.jpg) no-repeat center center fixed;
+    <style type="text/css"> 
+      body{ 
+      background-image: url('http://pixeswall.com/wp-content/uploads/2014/05/abstract-nice-abstract-alien-type-blue-sky-and-grey-nuance-widescreen-wallpapers-alien-types-on-earth-alien-type-music-alien-types-extinction-alien-type-movies-alien-types-greys-alien-type-tv-shows-al.jpg'); no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+          } 
+
     </style>
 
 

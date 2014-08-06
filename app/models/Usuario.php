@@ -10,7 +10,7 @@ class Usuario extends Eloquent
     public    $timestamps = false;
     
     	 public static function datosUsr() { 
-    $alias = "@choco";
+    $alias = Auth::user()->usrs_alias;
 	return DB::select("
 select usrs_email email, usrs_alias alias, usrs_nombre nombre,  usrs_apellidos apellido, usrs_telefono telefono, usrs_direccion direccion, usrs_biografia biografia, usrs_avatar avatar
 from mb_mnt_usrs 

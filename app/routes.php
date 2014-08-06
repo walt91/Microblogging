@@ -19,6 +19,11 @@
 Route::get('microblogging', 'HomeController@index');
 Route::get('profile', 'HomeController@profile');
 Route::get('edit', 'HomeController@edit');
+Route::get('/', 'UserController@principal');
+Route::get('register', 'UserController@registeruser');
+Route::get('logout', 'UserController@logout');
 
 Route::post('update', 'HomeController@update');
 Route::post('hum', 'HomeController@hum');
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@login');

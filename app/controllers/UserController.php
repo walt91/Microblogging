@@ -5,51 +5,49 @@ class UserController extends BaseController
 
     private function validationRules()
     {
-       
+        // validate the info, create rules for the inputs
         return array(
-            //'avatar' => 'required|alphaNum'
-            'email'    => 'required|email',
-            'password' => 'required|alphaNum|min:6',
-            
+            'email'    => 'required|email', // make sure the email is an actual email
+            'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
         );
     }
 
     public function login()
     {
-        $rules = $this->validationRules();
-        $validator = Validator::make(Input::all(), $rules);
+      $rules = $this->validationRules();
+      $validator = Validator::make(Input::all(), $rules);
 
-       /* if ($validator->fails()) {
-           return Redirect::to('/')
-                ->withErrors($validator) 
-                ->withInput(Input::except('password')); 
-        }*/
+      if ($validator->fails()) {
+            return Redirect::to('/')
+                ->withErrors($validator) // send back all errors to the login form
+                ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
+        }
 
         $userdata = array(
-            'usrs_email' => 'email',
-            'usrs_pwd'   => 'password'
+            'email'     => Input::get('email'),
+            'password'  => Input::get('password')
         );
-        $hola =Input::get('email');
-        var_dump(Auth::attempt($userdata));
-        if (Auth::attempt($userdata)){
-                //return Redirect::to('edit');
+
+    if (Auth::attempt($userdata)) {
+                return Redirect::to('microblogging');
         }
-        return Redirect::to('edit')->withErrors(array('invalid_credentials' => 'Acceso Denegado'));
+
+        return Redirect::to('/')->withErrors(array('invalid_credentials' => 'Acceso Denegado'));
     }
 
     public function register()
     {
-        $rules = $this->validationRules();
-        $rules['password'] = 'required|alphaNum|min:6|Confirmed';
-        $rules['confirm_password'] = 'required|alphaNum|min:6';
 
-        $validator = Validator::make(Input::all(), $rules);
-
-       if ($validator->fails()) {
-            return Redirect::to('register')
-                ->withErrors($validator) 
-                ->withInput(Input::except('password')); 
-        }
+        $rules = $this->validationRules(); 
+    $rules['password'] = 'required|alphaNum|min:3|Confirmed';
+     $rules['password_confirmation'] = 'required|alphaNum|min:3'; 
+     $validator = Validator::make(Input::all(), $rules);
+      // if the validator fails, redirect back to the form 
+      if ($validator->fails()) { return Redirect::to('/') ->withErrors($validator) 
+      // send back all errors to the login form 
+      ->withInput(Input::except('password')); 
+      // send back the input (not the password) so that we can repopulate the form 
+} 
 
         $email = Input::get('email');
         $password = Input::get('password');
@@ -61,22 +59,23 @@ class UserController extends BaseController
         $biography = Input::get('biography');
         $user = new User;
         //$user->usrs_avatar = $avatar;
-        $user->usrs_email = $email;
+        $user->email = $email;
         $user->usrs_nombre = $firstname;
         $user->usrs_apellidos = $lastname;
         $user->usrs_direccion = $direction;
         $user->usrs_telefono = $telephone;
         $user->usrs_alias = $alias;
         $user->usrs_biografia = $biography;
-        $user->usrs_pwd = Hash::make($password);
+        $user->password = Hash::make($password);
         $user->usrs_avatar = "Hola";
         $user->usrs_fecha_ingreso = "2014-09-01";
         $user->usrs_estado = 0;
         $user->save();
         Auth::attempt(array('email' => $email, 'password' => $password));
-        return Redirect::to('perfil');
+        return Redirect::to('microblogging');
 
     }
+   
 
     public function isLogged()
     {
@@ -88,6 +87,16 @@ class UserController extends BaseController
     public function logout()
     {
         Auth::logout();
-        return Redirect::to('index');
+        return Redirect::to('/');
+    }
+
+    public function principal()
+    {
+        return view::make('microblogging.login');
+    }
+
+    public function registeruser()
+    {
+        return view::make('microblogging.register');
     }
 }

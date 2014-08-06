@@ -11,13 +11,13 @@ class HomeController extends BaseController {
 
 	public function profile()
 	{
-		$usuario = Usuario::datosUsr();
+		$usuario = User::datosUsr();
 		return View::make('profile.index')->with('usuario',$usuario);
 	}
 
 	public function edit()
 	{
-		$usuario = Usuario::datosUsr();
+		$usuario = User::datosUsr();
 		return View::make('profile.edit')->with('usuario',$usuario);
 	}
 
