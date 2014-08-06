@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default3')
 
 <br>
 <br>
@@ -41,18 +41,3 @@
 </div>            
 </div>
 </div>
-<!--<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div id="registrarmayor" style="display:;"> 
-  <form id="registrar_form" action="register"method="post" target="_top"> 
-    <input type="text"name="firstname" id="firstname" autofocus="autofocus" value="" placeholder="Ingrese su Nombre."class="std_textbox" type="text"required=""> 
-    <br><br> 
-    <input type="text"name="lastname" id="lastname" autofocus="autofocus" value="" placeholder="Ingrese sus Apellidos."class="std_textbox" type="text" required=""> <br><br> <input type="text"name="biography" id="biography" autofocus="autofocus" value="" placeholder="Ingrese su biografía."class="std_textbox" type="text" required=""> <br><br> <input type="email"name="email" id="email" autofocus="autofocus" value="" placeholder="Ingrese su Correo."class="std_textbox" type="email" required=""> <br><br> <input type="text"name="alias" id="alias" autofocus="autofocus" value="" placeholder="Ingrese su Alias."class="std_textbox" type="text" required=""> <br><br> <input type="password" name="password" id="password" placeholder="Ingrese su Contraseña." class="std_textbox"required=""> <br><br> <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Reconfirmar su Contraseña." class="std_textbox"required=""> <br><br> <input type="text" name="telephone" id="telephone" placeholder="Ingrese su Teléfono." class="std_textbox" required=""> <br><br> <input type="text" name="direction" id="direction" placeholder="Ingrese su Dirección." class="std_textbox" required=""> <br><br> <button name="registrar" type="submit" id="registrar" tabindex="3">Regístrate</button> </form> </div>
--->

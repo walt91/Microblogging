@@ -19,8 +19,8 @@ union
 select cnts.contacts_alias_dest  alias, comments_descrip commentario, comments_fecha fecha 
 from mb_mnt_comments cmts, mb_mnt_contacts cnts
 where cmts.comments_alias = cnts.contacts_alias_dest 
-and cnts.contacts_alias_bloq=0 
 and cnts.contacts_alias_bloq=0
+and cnts.contacts_alias_seg=1
 and cnts.contacts_alias_orig='$alias'
 union
 select comments_alias alias, comments_descrip commentario, comments_fecha fecha 

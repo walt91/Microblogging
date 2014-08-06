@@ -69,7 +69,7 @@ class UserController extends BaseController
         $user->password = Hash::make($password);
         $user->usrs_avatar = "Hola";
         $user->usrs_fecha_ingreso = "2014-09-01";
-        $user->usrs_estado = 0;
+        $user->usrs_estado = 1;
         $user->save();
         Auth::attempt(array('email' => $email, 'password' => $password));
         return Redirect::to('microblogging');

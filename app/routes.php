@@ -26,4 +26,6 @@ Route::get('logout', 'UserController@logout');
 Route::post('update', 'HomeController@update');
 Route::post('hum', 'HomeController@hum');
 Route::post('register', 'UserController@register');
+Route::post('unfollow', 'HomeController@unfollow');
+Route::post('blockade', 'HomeController@blockade');
 Route::post('login', 'UserController@login');
