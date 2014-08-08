@@ -67,4 +67,32 @@ class HomeController extends BaseController {
 		return Redirect::to('microblogging');
 	}
 
+	public function follow()
+	{
+		$aliasDest = Input::get('aliasDest');
+		Contact::followUser($aliasDest);
+		return Redirect::to('microblogging');
+	}
+
+	public function unlock()
+	{
+		$aliasDest = Input::get('aliasDest');
+		Contact::unlockUser($aliasDest);
+		return Redirect::to('microblogging');
+	}
+
+	public function accept()
+	{
+		$aliasDest = Input::get('aliasDest');
+		Contact::acceptRequest($aliasDest);
+		return Redirect::to('microblogging');
+	}
+
+	public function decline()
+	{
+		$aliasDest = Input::get('aliasDest');
+		Contact::declineRequest($aliasDest);
+		return Redirect::to('microblogging');
+	}
+
 }

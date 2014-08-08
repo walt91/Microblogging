@@ -8,7 +8,9 @@
   {{ HTML::style('assets/css/timeline.css', array('media' => 'screen')) }}
   {{ HTML::style('assets/css/menu2.css', array('media' => 'screen')) }}
   {{ HTML::style('assets/css/profile.css', array('media' => 'screen')) }}
+  <!--{{ HTML::style('assets/css/contacts.css', array('media' => 'screen')) }}-->
   {{HTML::script('js/jquery.js');}}
+  {{HTML::script('js/contacts.js');}}
 </head>
 <body>
  <style type="text/css"> 
