@@ -53,12 +53,74 @@
         $estado=0;
               foreach ($comentarios as $row) {
               if($estado==0){
-                echo"<li>";
-                echo "<div class='timeline-badge'><i class='glyphicon glyphicon glyphicon glyphicon-chevron-down'></i></div>";
+                if($row->alias==Auth::user()->usrs_alias){
+                  echo"<li>";
+                  echo "<div class='timeline-badge'><i class='glyphicon glyphicon glyphicon glyphicon-chevron-down'></i></div>";
+                  echo"<div class='timeline-panel'>";
+                  echo"<div class='timeline-heading'>";
+                  echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
+                  echo"<br>";
+                  echo"<h4 class='timeline-title'>$row->alias</h4>";
+                  echo"</div>";
+                  echo"<div class='timeline-body'>";
+                  echo"<p>$row->commentario</p>";
+                  echo"</div>";
+                  echo"<p><small class='text-muted'><i class='glyphicon glyphicon-time'></i>$row->fecha</small></p>";
+                  echo"<hr>";
+                  echo"<form action='deletecomment' method='post' enctype='multipart/form-data'role='form'>";
+                  echo"<input name='comment' type='hidden' value='$row->commentario'/>";
+                  echo"<div class='action'>";
+                  echo"<button type='submit' class='btn btn-danger btn-xs' title='Delete Comment'>";
+                  echo"<span class='glyphicon glyphicon-remove-circle'> Delete comment</span>";
+                  echo"</button>";
+                  echo"</form>";
+                  echo"</div>";
+                  echo"</div>";
+                  echo"</li>";
+                  $estado=1;
+                }else{
+                  echo"<li>";
+                  echo "<div class='timeline-badge'><i class='glyphicon glyphicon glyphicon glyphicon-chevron-down'></i></div>";
+                  echo"<div class='timeline-panel'>";
+                  echo"<div class='timeline-heading'>";
+                  echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
+                  echo"<br>";
+                  echo"<h4 class='timeline-title'>$row->alias</h4>";
+                  echo"</div>";
+                  echo"<div class='timeline-body'>";
+                  echo"<p>$row->commentario</p>";
+                  echo"</div>";
+                  echo"<p><small class='text-muted'><i class='glyphicon glyphicon-time'></i>$row->fecha</small></p>";
+                  echo"<hr>";
+                  echo"<form action='unfollow' method='post' enctype='multipart/form-data'role='form'>";
+                  echo"<input name='aliasDest' type='hidden' value='$row->alias'/>";
+                  echo"<div class='action'>";
+                  echo"<button type='submit' class='btn btn-warning btn-xs' title='unfollow'>";
+                  echo"<span class='glyphicon glyphicon-remove-circle'>unfollow</span>";
+                  echo"</button>";
+                  echo"</form>";
+                  echo"<br>";
+                  echo"<br>";
+                  echo"<form action='blockade' method='post' enctype='multipart/form-data'role='form'>";
+                  echo"<input name='aliasDest' type='hidden' value='$row->alias'/>";
+                  echo"<button type='submit' class='btn btn-danger btn-xs' title='blockade'>";
+                  echo"<span class='glyphicon glyphicon-ban-circle'>blockade</span>";
+                  echo"</button>";
+                  echo"</form>";
+                  echo"</div>";
+                  echo"</div>";
+                  echo"</li>";
+                $estado=1;
+                }
+              }else{
+                if($row->alias==Auth::user()->usrs_alias){
+                  echo"<li class='timeline-inverted'>";
+                echo"<div class='timeline-badge' ><i class='glyphicon glyphicon glyphicon-chevron-down'></i></div>";
                 echo"<div class='timeline-panel'>";
                 echo"<div class='timeline-heading'>";
                 echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
                 echo"<br>";
+                echo"<input name='alias' type='hidden' value='$row->alias'/>";
                 echo"<h4 class='timeline-title'>$row->alias</h4>";
                 echo"</div>";
                 echo"<div class='timeline-body'>";
@@ -66,27 +128,19 @@
                 echo"</div>";
                 echo"<p><small class='text-muted'><i class='glyphicon glyphicon-time'></i>$row->fecha</small></p>";
                 echo"<hr>";
-                echo"<form action='unfollow' method='post' enctype='multipart/form-data'role='form'>";
-                echo"<input name='aliasDest' type='hidden' value='$row->alias'/>";
-                echo"<div class='action'>";
-                echo"<button type='submit' class='btn btn-warning btn-xs' title='unfollow'>";
-                echo"<span class='glyphicon glyphicon-remove-circle'>unfollow</span>";
-                echo"</button>";
-                echo"</form>";
-                echo"<br>";
-                echo"<br>";
-                echo"<form action='blockade' method='post' enctype='multipart/form-data'role='form'>";
-                echo"<input name='aliasDest' type='hidden' value='$row->alias'/>";
-                echo"<button type='submit' class='btn btn-danger btn-xs' title='blockade'>";
-                echo"<span class='glyphicon glyphicon-ban-circle'>blockade</span>";
-                echo"</button>";
-                echo"</form>";
+                echo"<form action='deletecomment' method='post' enctype='multipart/form-data'role='form'>";
+                  echo"<input name='comment' type='hidden' value='$row->commentario'/>";
+                  echo"<div class='action'>";
+                  echo"<button type='submit' class='btn btn-danger btn-xs' title='Delete Comment'>";
+                  echo"<span class='glyphicon glyphicon-remove-circle'> Delete comment</span>";
+                  echo"</button>";
+                  echo"</form>";
                 echo"</div>";
                 echo"</div>";
                 echo"</li>";
-                $estado=1;
-              }else{
-                echo"<li class='timeline-inverted'>";
+                $estado=0;
+                }else{
+                  echo"<li class='timeline-inverted'>";
                 echo"<div class='timeline-badge' ><i class='glyphicon glyphicon glyphicon-chevron-down'></i></div>";
                 echo"<div class='timeline-panel'>";
                 echo"<div class='timeline-heading'>";
@@ -119,13 +173,11 @@
                 echo"</div>";
                 echo"</li>";
                 $estado=0;
+                }
               }
                 
               }
         ?>
-
-        
-
 <a id="back-to-top" href="" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </div>
 

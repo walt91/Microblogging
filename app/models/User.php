@@ -18,7 +18,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $table      = 'users';
     protected $primaryKey = 'usrs_alias';
     protected $fillable   = array('
-    	email','usrs_alias', 'usrs_nombre','usrs_apellidos','usrs_telefono','usrs_direcion','usrs_biografia','password', 'usrs_avatar','usrs_fecha_ingreso','usrs_estado');
+    	email','usrs_alias', 'usrs_nombre','usrs_apellidos','usrs_telefono','usrs_direccion','usrs_biografia','password', 'usrs_avatar','usrs_fecha_ingreso','usrs_estado');
     protected $guarded    = array('usrs_id');
     public    $timestamps = false;
     

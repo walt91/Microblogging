@@ -5,10 +5,8 @@
       <title>Microblogging</title>
   <meta name="viewport" content="width-device-width, initial-scale=1.0">
   {{ HTML::style('assets/css/bootstrap.min.css', array('media' => 'screen')) }}
-  {{ HTML::style('assets/css/timeline.css', array('media' => 'screen')) }}
   {{ HTML::style('assets/css/menu2.css', array('media' => 'screen')) }}
-  {{ HTML::style('assets/css/profile.css', array('media' => 'screen')) }}
-  <!--{{ HTML::style('assets/css/contacts.css', array('media' => 'screen')) }}-->
+  {{ HTML::style('assets/css/contacts.css', array('media' => 'screen')) }}
   {{HTML::script('js/jquery.js');}}
   {{HTML::script('js/contacts.js');}}
 </head>
@@ -31,7 +29,7 @@
     <input type="text" class="input-large search-query" placeholder="Search" style="width:550px;  margin-left: 15px;">
     <button type="submit" class="btn-small"><span class="glyphicon glyphicon-search"></span></button>
     </form></li>
-    <li id="People" class="people"><a href="/people" class="flip"><span class="glyphicon glyphicon-globe"></span> People</a></li>
+    <li id="people" class="people"><a href="/people" class="flip"><span class="glyphicon glyphicon-globe"></span> People</a></li>
     <li id="logout" class="logout"><a href="/logout" class="flip"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
     </ul>
 

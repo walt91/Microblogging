@@ -48,11 +48,6 @@ class HomeController extends BaseController {
 		return Redirect::to('microblogging');
 	}
 
-	public function login2()
-	{
-		return view::make('microblogging.login');
-	}
-
 	public function unfollow()
 	{
 		$aliasDest = Input::get('aliasDest');
@@ -95,4 +90,16 @@ class HomeController extends BaseController {
 		return Redirect::to('microblogging');
 	}
 
+	public function people()
+	{
+		$usuario = User::all();
+		return View::make('contact.index')->with('usuario',$usuario);
+	}
+
+	public function deletecomment()
+	{
+		$comment = Input::get('comment');
+		Comentario::deleteComment($comment);
+		return Redirect::to('microblogging');
+	}
 }
