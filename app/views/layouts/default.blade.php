@@ -27,11 +27,14 @@
      <ul class="nav navbar-default navbar-static-top nav-justified navbar-fixed-top navbar-inverse" role="navigation">
     <li id="profile" class="profile"><a href="/profile" class="flip"> <span class="glyphicon glyphicon-user"></span> Profile</a></li>
     <li id="home" class="home"><a href="/microblogging" class="flip"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-    <li id="search" class="search"><form>
-    <input type="text" class="input-large search-query" placeholder="Search" style="width:550px;  margin-left: 15px;">
+    <li id="search" class="search">
+    <form  action="hashtags" method="post" accept-charset="utf-8" role="form">
+    <input type="text" class="input-large search-query" placeholder="Search hashtag" style="width:550px;  margin-left: 15px;" name="hashtag">
     <button type="submit" class="btn-small"><span class="glyphicon glyphicon-search"></span></button>
-    </form></li>
+    </form>
+    </li>
     <li id="People" class="people"><a href="/people" class="flip"><span class="glyphicon glyphicon-globe"></span> People</a></li>
+    <li id="requests" class="requests"><a href="/requests" class="flip"><span class="glyphicon glyphicon-bell"></span> Requests</a></li>
     <li id="logout" class="logout"><a href="/logout" class="flip"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
     </ul>
 

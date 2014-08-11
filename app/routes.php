@@ -20,6 +20,8 @@ Route::get('microblogging', 'HomeController@index');
 Route::get('profile', 'HomeController@profile');
 Route::get('edit', 'HomeController@edit');
 Route::get('people', 'HomeController@people');
+Route::get('requests', 'HomeController@requests');
+
 
 Route::get('/', 'UserController@principal');
 Route::get('register', 'UserController@registeruser');
@@ -35,6 +37,9 @@ Route::post('unlock', 'HomeController@unlock');
 Route::post('accept', 'HomeController@accept');
 Route::post('decline', 'HomeController@decline');
 Route::post('deletecomment', 'HomeController@deletecomment');
+Route::post('hashtags', 'HomeController@hashtags');
+Route::post('deleteUser', 'HomeController@deleteUser');
+
 
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');

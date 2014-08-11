@@ -40,12 +40,19 @@ class Contact extends Eloquent
     public static function acceptRequest($aliasDest) {
     $aliasOrig =  Auth::user()->usrs_alias;
     return DB::select("update mb_mnt_contacts set contacts_alias_bloq=0, contacts_alias_seg=1, contacts_alias_solic =0
-    where contacts_alias_orig=? and contacts_alias_dest=?", array($aliasOrig, $aliasDest));
+    where contacts_alias_orig=? and contacts_alias_dest=?;", array($aliasDest, $aliasOrig));
     }
+
+    public static function insertPostAcept($aliasDest) {
+    $aliasOrig =  Auth::user()->usrs_alias;
+    return DB::select("insert into mb_mnt_contacts (contacts_alias_orig,contacts_alias_dest,contacts_alias_bloq,contacts_alias_seg,contacts_alias_solic)
+    values (?,?,0,1,0);", array($aliasOrig,$aliasDest));
+    }
+
 
     public static function declineRequest($aliasDest) {
     $aliasOrig =  Auth::user()->usrs_alias;
-    return DB::select("update mb_mnt_contacts set contacts_alias_bloq=0, contacts_alias_seg=0, contacts_alias_solic =0
-    where contacts_alias_orig=? and contacts_alias_dest=?", array($aliasOrig, $aliasDest));
+    return DB::select("delete from  mb_mnt_contacts 
+        where contacts_alias_orig=? and contacts_alias_dest=?", array($aliasDest, $aliasOrig));
     }
 }

@@ -42,13 +42,14 @@
 <br>
 <div class='panel'>
          <div class='panel-heading c-list'>
-                    <span class='title'>Know new people from microblogging... <i class='glyphicon glyphicon-thumbs-up'></i></span>
+                    <span class='title'>These people want to be your friends, are you agree <i class='glyphicon glyphicon-question-sign'></i></span>
                     <hr>
                 </div>
                 <ul class='list-group' id='contact-list' >
 <?php
 
     foreach ($usuario as $row) {
+
                         echo"<li class='list-group-item'>";
                         echo"<div class='col-xs-12 col-sm-3'>";
                             echo"<img src='$row->avatar' />";
@@ -64,12 +65,23 @@
                             echo"<span class='visible-xs'> <span class='text-muted'>$row->email</span><br/></span>";
                             
                         echo"</div>";
-                        echo"<form action='follow' method='post' enctype='multipart/form-data'role='form'>";
+                          echo"<form action='accept' method='post' enctype='multipart/form-data'role='form'>";
                           echo"<input name='aliasDest' type='hidden' value='$row->alias'/>";
                           echo"<div class='action'>";
                           echo"<button type='submit' class='btn btn-success btn-xs  pull-right'>";
-                          echo"Follow <span class='glyphicon glyphicon-flag'>  </span>";
+                          echo"Accept <span class='glyphicon glyphicon-flag'>  </span>";
                           echo"</button>";
+                          echo"</div>";
+                          echo"</form>";
+                          echo"<br>";
+                          echo"<br>";
+                          echo"<form action='decline' method='post' enctype='multipart/form-data'role='form'>";
+                          echo"<input name='aliasDest' type='hidden' value='$row->alias'/>";
+                          echo"<div class='action'>";
+                          echo"<button type='submit' class='btn btn-danger btn-xs  pull-right'>";
+                          echo"Decline <span class='glyphicon glyphicon-flag'>  </span>";
+                          echo"</button>";
+                          echo"</div>";
                           echo"</form>";
                         echo"<div class='clearfix'></div>";
                     echo"</li>";
@@ -82,7 +94,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#people').removeClass("people");
-        $('#people').addClass("active");
+        $('#requests').removeClass("requests");
+        $('#requests').addClass("active");
     });
 </script>

@@ -37,5 +37,13 @@ class Comentario extends Eloquent
     and
     comments_descrip = ?" , array($alias, $comment));
    }
+
+   public static function hashtagSearched($hashtag) {
+    return DB::select("
+    select comments_alias alias, comments_descrip commentario, comments_fecha fecha 
+   from mb_mnt_comments 
+   where lower(comments_descrip)like lower('%$hashtag%')
+    order by fecha desc");
+   }
 }
 

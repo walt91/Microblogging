@@ -39,6 +39,7 @@
     <br>
            <?php
               foreach ($usuario as $row) {
+            echo"<form action='deleteUser' method='post' enctype='multipart/form-data'role='form'>";
             echo"<div class='panel-heading'>";
               echo"<h2 class='panel-title'>$row->nombre $row->apellido</h2>";
             echo"</div>";
@@ -76,11 +77,14 @@
                   echo"</div>";
                 echo"</div>";
               echo"</div>";
-                 echo"<div class='panel-footer' style='background-color: #3355FE;'>";
-                        echo"<a  type='button' href='edit' class='btn btn-sm btn-warning'><i class='glyphicon glyphicon-edit'></i> <strong> Edit your information</strong></a>";
+                          echo"<div class='panel-footer' style='background-color: #3355FE;'>";
+                          echo"<i class='glyphicon glyphicon-edit'></i><a href='/edit' type='button'class='btn btn-sm btn-warning'>Edit your profile</a>";
                         echo"<span class='pull-right'>";
-                            echo"<a  type='button'class='btn btn-sm btn-danger'><i class='glyphicon glyphicon-remove'></i><strong> Delete your account</strong></a>";
+                            
+                        echo"<input type='submit' value='Delete Your account' <a  type='submit' class='btn btn-sm btn-danger'><i class='glyphicon glyphicon-trash'></i></a>";
                         echo"</span>";
+                  echo"</div>";
+                        echo"</form>";
                   echo"</div>";
                 }
                 ?>

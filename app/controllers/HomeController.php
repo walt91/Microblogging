@@ -79,22 +79,19 @@ class HomeController extends BaseController {
 	public function accept()
 	{
 		$aliasDest = Input::get('aliasDest');
+
 		Contact::acceptRequest($aliasDest);
-		return Redirect::to('microblogging');
+		Contact::insertPostAcept($aliasDest);
+		return Redirect::to('requests');
 	}
 
 	public function decline()
 	{
 		$aliasDest = Input::get('aliasDest');
 		Contact::declineRequest($aliasDest);
-		return Redirect::to('microblogging');
+		return Redirect::to('requests');
 	}
 
-	public function people()
-	{
-		$usuario = User::all();
-		return View::make('contact.index')->with('usuario',$usuario);
-	}
 
 	public function deletecomment()
 	{
@@ -102,4 +99,33 @@ class HomeController extends BaseController {
 		Comentario::deleteComment($comment);
 		return Redirect::to('microblogging');
 	}
+
+	public function people()
+	{
+		$usuario = User::datosUsrMB();
+		return View::make('contact.index')->with('usuario',$usuario);
+	}
+
+	public function requests()
+	{
+		$usuario = User::datosSolic();
+		return View::make('contact.requests')->with('usuario',$usuario);
+	}
+
+	public function hashtags()
+	{
+		$hashtag = Input::get('hashtag');
+		$hashtagSearched = Comentario::hashtagSearched($hashtag);
+		return View::make('microblogging.hashtags')->with('hashtagSearched',$hashtagSearched);
+	}
+
+	public function deleteUser()
+	{
+		User::deleteUserAlias();
+		User::deleteUserAliasOrig();
+		User::deleteUserCommentsAlias();
+		User::deleteUserCommentsAliasTag();
+		return View::make('microblogging.login');
+	}
+	
 }
