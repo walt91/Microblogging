@@ -47,7 +47,7 @@
               echo"<div class='panel-body'>";
                 echo"<div class='row'>";
                   echo"<div class='col-md-3 col-lg-3 ' align='center'> ";
-                    echo"<img alt='User Pic' src='images/logan.jpg' class='circular2'> ";
+                    echo"<img alt='User Pic' src='images/$row->avatar' class='circular2'> ";
                   echo"</div>";
                   echo"<div class=' col-md-9 col-lg-9 '> ";
                     echo"<table class='table table-user-information' style='color:white;'>";

@@ -52,7 +52,7 @@
 
                         echo"<li class='list-group-item'>";
                         echo"<div class='col-xs-12 col-sm-3'>";
-                            echo"<img src='$row->avatar' />";
+                            echo"<img class='circular2' src='images/$row->avatar' />";
                         echo"</div>";
                         echo"<div class='col-xs-12 col-sm-9'>";
                             echo"<span class='name'>$row->nombre $row->apellido</span><br/>";

@@ -98,7 +98,7 @@
           echo"</div>";
 
           echo"<div class='col-md-12 col-lg-12' align='center'> ";
-                    echo"<img alt='User Pic' src='images/logan.jpg' class='circular2'> ";
+                    echo"<img alt='User Pic' src='images/$row->avatar' class='circular2'> ";
                     echo"<input id='filename' name='avatar' type='file'/>";
                   echo"</div>";
 
@@ -125,7 +125,9 @@ echo"</div><!-- /.row -->";
 
                 }
                 ?>
-
+      @if(Session::has('message'))
+        <div class="alert alert-{{ Session::get('class') }}">{{ Session::get('message')}}</div>
+      @endif
 </div>
 
 <script type="text/javascript">

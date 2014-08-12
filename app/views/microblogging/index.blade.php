@@ -41,7 +41,6 @@
               <div class="controls">
               <button id="contact-submit" type="submit" class="btn btn-primary input-medium" style="margin-left: 735px; width:150px;">Hum</button>
               </div>
-
     </form>
     
 
@@ -58,7 +57,7 @@
                   echo "<div class='timeline-badge'><i class='glyphicon glyphicon glyphicon glyphicon-chevron-down'></i></div>";
                   echo"<div class='timeline-panel'>";
                   echo"<div class='timeline-heading'>";
-                  echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
+                  echo"<img class='circular' src='images/$row->avatar'/>";
                   echo"<br>";
                   echo"<h4 class='timeline-title'>$row->alias</h4>";
                   echo"</div>";
@@ -83,7 +82,7 @@
                   echo "<div class='timeline-badge'><i class='glyphicon glyphicon glyphicon glyphicon-chevron-down'></i></div>";
                   echo"<div class='timeline-panel'>";
                   echo"<div class='timeline-heading'>";
-                  echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
+                  echo"<img class='circular' src='images/$row->avatar'/>";
                   echo"<br>";
                   echo"<h4 class='timeline-title'>$row->alias</h4>";
                   echo"</div>";
@@ -118,7 +117,7 @@
                 echo"<div class='timeline-badge' ><i class='glyphicon glyphicon glyphicon-chevron-down'></i></div>";
                 echo"<div class='timeline-panel'>";
                 echo"<div class='timeline-heading'>";
-                echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
+                echo"<img class='circular' src='images/$row->avatar'/>";
                 echo"<br>";
                 echo"<input name='alias' type='hidden' value='$row->alias'/>";
                 echo"<h4 class='timeline-title'>$row->alias</h4>";
@@ -144,7 +143,7 @@
                 echo"<div class='timeline-badge' ><i class='glyphicon glyphicon glyphicon-chevron-down'></i></div>";
                 echo"<div class='timeline-panel'>";
                 echo"<div class='timeline-heading'>";
-                echo"<img class='circular' src='http://g.cdn.mersap.com/temas-legales/files/2012/08/persona-juridica.jpg'/>";
+                echo"<img class='circular' src='images/$row->avatar'/>";
                 echo"<br>";
                 echo"<input name='alias' type='hidden' value='$row->alias'/>";
                 echo"<h4 class='timeline-title'>$row->alias</h4>";

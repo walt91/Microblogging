@@ -23,16 +23,29 @@ class HomeController extends BaseController {
 
 	public function update()
 	{
-		$alias = Auth::user()->usrs_alias;
-		$user = User::find($alias);
-		$user->usrs_nombre = Input::get('nombre');
-		$user->usrs_apellidos = Input::get('apellido');
-		$user->usrs_telefono = Input::get('telefono');
-		$user->usrs_direccion = Input::get('direccion');
-		$user->usrs_avatar = Input::get('avatar');
-		$user->usrs_biografia = Input::get('biografia');
-		$user->save();
-		return Redirect::to('profile');
+			$photo = Input::file('avatar');
+			$name = $photo->getClientOriginalName();
+			$extension=$photo->getClientOriginalExtension();
+			if($extension=="jpg")
+			{
+				$file = public_path(). "/images";
+				$upload = $photo->move($file,$name);
+				$alias = Auth::user()->usrs_alias;
+				$user = User::find($alias);
+				$user->usrs_nombre = Input::get('nombre');
+				$user->usrs_apellidos = Input::get('apellido');
+				$user->usrs_telefono = Input::get('telefono');
+				$user->usrs_direccion = Input::get('direccion');
+				$user->usrs_avatar = $name;
+				$user->usrs_biografia = Input::get('biografia');
+				$user->save();
+				return Redirect::to('profile');
+				}
+			else
+			{
+				Session::flash('message','Incompatible file, please select a file with jpg extension');
+				Session::flash('class','danger');
+			}
 	}
 
 	public function hum()

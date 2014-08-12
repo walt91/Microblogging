@@ -48,7 +48,7 @@ class UserController extends BaseController
       ->withInput(Input::except('password')); 
       // send back the input (not the password) so that we can repopulate the form 
 } 
-
+        
         $email = Input::get('email');
         $password = Input::get('password');
         $firstname = Input::get('firstname');
@@ -67,7 +67,7 @@ class UserController extends BaseController
         $user->usrs_alias = $alias;
         $user->usrs_biografia = $biography;
         $user->password = Hash::make($password);
-        $user->usrs_avatar = "Hola";
+        $user->usrs_avatar = "default.jpg";
         $user->usrs_fecha_ingreso = "2014-09-01";
         $user->usrs_estado = 1;
         $user->save();
