@@ -1,0 +1,65 @@
+.panel-default {
+opacity: 0.6;
+margin-top:30px;
+border-color: #282828;
+
+
+}
+
+.panel-footer {
+    font-family: "Bookman Old Style";
+    font-size: 14px;
+    padding: 10px 15px;
+    background-color: #3C3C3C;
+    border-top: 1px solid #282828;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+
+.panel-body {
+    padding: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-family: "Arial";
+
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+* {
+    -moz-box-sizing: border-box;
+}
+.btn-success {
+    color: #FFF;
+    background-color: #77B300;
+    border-color: #77B300;
+    font-size: 12px;
+}
+.btn-default {
+    color: #FFF;
+    background-color: #424242;
+    border-color: #424242;
+    font-size: 12px;
+}
+    div.panel,p.flip {
+        width: 100%;
+          height: auto;
+          display: none;
+          position: absolute;
+          top: 50%; 
+          left: 50%; 
+          margin-top: -140px; 
+          margin-left: -750px;
+    }
+
+.form-group.last { margin-bottom:0px; }
+
+.logout {
+
+    margin-left: 1000px; 
+}

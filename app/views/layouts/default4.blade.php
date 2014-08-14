@@ -5,10 +5,8 @@
       <title>Microblogging</title>
   <meta name="viewport" content="width-device-width, initial-scale=1.0">
   {{ HTML::style('assets/css/bootstrap.min.css', array('media' => 'screen')) }}
-  {{ HTML::style('assets/css/timeline.css', array('media' => 'screen')) }}
   {{ HTML::style('assets/css/menu2.css', array('media' => 'screen')) }}
-  {{ HTML::style('assets/css/profile.css', array('media' => 'screen')) }}
-  <!--{{ HTML::style('assets/css/contacts.css', array('media' => 'screen')) }}-->
+  {{ HTML::style('assets/css/contacts.css', array('media' => 'screen')) }}
   {{HTML::script('js/jquery.js');}}
   {{HTML::script('js/contacts.js');}}
 </head>

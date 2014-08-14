@@ -1,4 +1,4 @@
-$(document).on('ready', function() {
+/*$(document).on('ready', function() {
     $('#preview').hover(
         function() {
             $(this).find('a').fadeIn();
@@ -25,4 +25,4 @@ $(document).on('ready', function() {
          
          reader.readAsDataURL(this.files[0]);
     });
-});
+});*/
